@@ -1,0 +1,32 @@
+# Optional: regenerate with `xcodegen generate` if installed.
+# The checked-in App/Kook.xcodeproj is produced by tools/generate_xcodeproj.py.
+name: Kook
+options:
+  bundleIdPrefix: com.susilab
+  deploymentTarget:
+    iOS: "17.0"
+settings:
+  SWIFT_VERSION: "5.0"
+targets:
+  Kook:
+    type: application
+    platform: iOS
+    sources:
+      - path: App/Kook
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: com.susilab.kook
+      INFOPLIST_KEY_CFBundleDisplayName: Kook
+      INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES
+      INFOPLIST_KEY_UILaunchScreen_Generation: YES
+      TARGETED_DEVICE_FAMILY: "1"
+  KookTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: App/KookTests
+    dependencies:
+      - target: Kook
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: com.susilab.kook.tests
+      TEST_HOST: "$(BUILT_PRODUCTS_DIR)/Kook.app/Kook"
+      BUNDLE_LOADER: "$(TEST_HOST)"

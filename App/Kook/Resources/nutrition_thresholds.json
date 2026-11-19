@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "status": "draft_needs_dietitian_review",
+  "disclaimer": "These sugar and carb thresholds are DRAFT values for the Kook prototype only. They are not medical advice and must be reviewed by a registered dietitian before being treated as approved guidance. US only.",
+  "currency": "USD",
+  "region": "US",
+  "per_serving": {
+    "no_added_sugar": {
+      "max_added_sugar_grams": 0,
+      "notes": "FDA added sugars definition; prototype treats any declared added_sugar_grams_per_serving > 0 as failing this mode.",
+      "sources": [
+        "FDA Added Sugars labeling guidance (https://www.fda.gov/food/nutrition-facts-label/added-sugars-nutrition-facts-label)"
+      ]
+    },
+    "diabetic_friendly": {
+      "max_added_sugar_grams": 5,
+      "max_total_sugar_grams": 15,
+      "max_net_carbs_grams": 45,
+      "notes": "DRAFT heuristic for prototype filtering only — not individualized medical nutrition therapy.",
+      "sources": [
+        "American Diabetes Association Standards of Care overview (https://diabetesjournals.org/care)",
+        "Dietary Guidelines for Americans sugar guidance (https://www.dietaryguidelines.gov/)"
+      ]
+    },
+    "low_carb": {
+      "max_net_carbs_grams": 30,
+      "max_added_sugar_grams": 5,
+      "notes": "DRAFT net-carb ceiling for prototype ranking/filtering; not a clinical ketogenic prescription.",
+      "sources": [
+        "USDA FoodData Central carbohydrate methodology (https://fdc.nal.usda.gov/)",
+        "Dietary Guidelines for Americans (https://www.dietaryguidelines.gov/)"
+      ]
+    }
+  }
+}

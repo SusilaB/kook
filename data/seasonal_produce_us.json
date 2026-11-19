@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "region": "US",
+  "source": "USDA Seasonal Produce Guide / SNAP-Ed Connection seasonal produce (national overview aggregates). Unknown produce receives no seasonal badge.",
+  "source_urls": [
+    "https://snaped.fns.usda.gov/resources/nutrition-education-materials/seasonal-produce-guide"
+  ],
+  "months": {
+    "1": ["citrus", "kale", "cabbage", "carrot", "lemon"],
+    "2": ["citrus", "kale", "cabbage", "carrot", "lemon"],
+    "3": ["asparagus", "spinach", "strawberry", "cabbage", "lemon"],
+    "4": ["asparagus", "spinach", "strawberry", "pea", "radish"],
+    "5": ["strawberry", "asparagus", "spinach", "pea", "lettuce"],
+    "6": ["blueberry", "strawberry", "cucumber", "tomato", "zucchini", "cherry"],
+    "7": ["blueberry", "tomato", "cucumber", "zucchini", "peach", "corn", "watermelon"],
+    "8": ["tomato", "cucumber", "peach", "corn", "watermelon", "blueberry", "avocado"],
+    "9": ["apple", "tomato", "squash", "grape", "pear", "cilantro", "lime"],
+    "10": ["apple", "squash", "pumpkin", "pear", "cabbage", "cilantro"],
+    "11": ["apple", "squash", "pumpkin", "cabbage", "cranberry", "carrot"],
+    "12": ["citrus", "kale", "cabbage", "carrot", "squash", "lemon"]
+  },
+  "ingredient_aliases": {
+    "strawberry": "strawberry",
+    "blueberry": "blueberry",
+    "tomato": "tomato",
+    "cilantro": "cilantro",
+    "cucumber": "cucumber",
+    "lemon": "lemon",
+    "lime": "lime",
+    "avocado": "avocado",
+    "cabbage": "cabbage",
+    "carrot": "carrot"
+  }
+}

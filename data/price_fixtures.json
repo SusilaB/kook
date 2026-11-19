@@ -1,0 +1,115 @@
+{
+  "version": 1,
+  "currency": "USD",
+  "region": "US",
+  "fetched_at": "2026-11-03T18:00:00Z",
+  "provider": "StubPriceProvider",
+  "note": "Fixture stub prices only. Not live scrapes. Missing items must surface as price unavailable.",
+  "items": [
+    {
+      "ingredient_id": "rolled_oats",
+      "conventional": { "amount": 3.49, "store": "Walmart", "unit": "18 oz", "url": "https://www.walmart.com/" },
+      "organic": { "amount": 4.29, "store": "Safeway", "unit": "18 oz", "url": "https://www.safeway.com/" }
+    },
+    {
+      "ingredient_id": "plain_yogurt",
+      "conventional": { "amount": 4.98, "store": "Costco", "unit": "32 oz", "url": "https://www.costco.com/" },
+      "organic": { "amount": 5.99, "store": "Safeway", "unit": "32 oz", "url": "https://www.safeway.com/" }
+    },
+    {
+      "ingredient_id": "strawberry",
+      "conventional": { "amount": 3.48, "store": "Walmart", "unit": "1 lb", "url": "https://www.walmart.com/" },
+      "organic": { "amount": 4.98, "store": "Safeway", "unit": "1 lb", "url": "https://www.safeway.com/" }
+    },
+    {
+      "ingredient_id": "blueberry",
+      "conventional": { "amount": 3.98, "store": "Walmart", "unit": "pint", "url": "https://www.walmart.com/" },
+      "organic": { "amount": 5.49, "store": "Safeway", "unit": "pint", "url": "https://www.safeway.com/" }
+    },
+    {
+      "ingredient_id": "chia_seeds",
+      "conventional": { "amount": 6.48, "store": "Walmart", "unit": "12 oz", "url": "https://www.walmart.com/" },
+      "organic": { "amount": 7.99, "store": "Costco", "unit": "2 lb", "url": "https://www.costco.com/" }
+    },
+    {
+      "ingredient_id": "chickpeas",
+      "conventional": { "amount": 0.98, "store": "Walmart", "unit": "15 oz can", "url": "https://www.walmart.com/" },
+      "organic": { "amount": 1.49, "store": "Safeway", "unit": "15 oz can", "url": "https://www.safeway.com/" }
+    },
+    {
+      "ingredient_id": "tomato",
+      "conventional": { "amount": 1.68, "store": "Walmart", "unit": "1 lb", "url": "https://www.walmart.com/" },
+      "organic": { "amount": 2.49, "store": "Safeway", "unit": "1 lb", "url": "https://www.safeway.com/" }
+    },
+    {
+      "ingredient_id": "onion",
+      "conventional": { "amount": 0.98, "store": "Walmart", "unit": "1 lb", "url": "https://www.walmart.com/" },
+      "organic": { "amount": 1.48, "store": "Safeway", "unit": "1 lb", "url": "https://www.safeway.com/" }
+    },
+    {
+      "ingredient_id": "olive_oil",
+      "conventional": { "amount": 7.98, "store": "Costco", "unit": "1 L", "url": "https://www.costco.com/" },
+      "organic": { "amount": 11.99, "store": "Safeway", "unit": "500 mL", "url": "https://www.safeway.com/" }
+    },
+    {
+      "ingredient_id": "brown_rice",
+      "conventional": { "amount": 2.48, "store": "Walmart", "unit": "2 lb", "url": "https://www.walmart.com/" },
+      "organic": { "amount": 3.79, "store": "Safeway", "unit": "2 lb", "url": "https://www.safeway.com/" }
+    },
+    {
+      "ingredient_id": "chicken_breast",
+      "conventional": { "amount": 3.98, "store": "Walmart", "unit": "1 lb", "url": "https://www.walmart.com/" },
+      "organic": { "amount": 6.99, "store": "Safeway", "unit": "1 lb", "url": "https://www.safeway.com/" }
+    },
+    {
+      "ingredient_id": "quinoa",
+      "conventional": { "amount": 4.48, "store": "Walmart", "unit": "16 oz", "url": "https://www.walmart.com/" },
+      "organic": { "amount": 5.98, "store": "Costco", "unit": "4 lb", "url": "https://www.costco.com/" }
+    },
+    {
+      "ingredient_id": "cucumber",
+      "conventional": { "amount": 0.68, "store": "Walmart", "unit": "each", "url": "https://www.walmart.com/" },
+      "organic": { "amount": 1.29, "store": "Safeway", "unit": "each", "url": "https://www.safeway.com/" }
+    },
+    {
+      "ingredient_id": "black_beans",
+      "conventional": { "amount": 0.88, "store": "Walmart", "unit": "15 oz can", "url": "https://www.walmart.com/" },
+      "organic": { "amount": 1.39, "store": "Safeway", "unit": "15 oz can", "url": "https://www.safeway.com/" }
+    },
+    {
+      "ingredient_id": "corn_tortilla",
+      "conventional": { "amount": 2.28, "store": "Walmart", "unit": "30 ct", "url": "https://www.walmart.com/" },
+      "organic": { "amount": 3.49, "store": "Safeway", "unit": "24 ct", "url": "https://www.safeway.com/" }
+    },
+    {
+      "ingredient_id": "avocado",
+      "conventional": { "amount": 1.25, "store": "Walmart", "unit": "each", "url": "https://www.walmart.com/" },
+      "organic": { "amount": 1.99, "store": "Safeway", "unit": "each", "url": "https://www.safeway.com/" }
+    },
+    {
+      "ingredient_id": "cabbage",
+      "conventional": { "amount": 0.78, "store": "Walmart", "unit": "1 lb", "url": "https://www.walmart.com/" },
+      "organic": null
+    },
+    {
+      "ingredient_id": "garlic",
+      "conventional": { "amount": 0.48, "store": "Walmart", "unit": "bulb", "url": "https://www.walmart.com/" },
+      "organic": { "amount": 0.79, "store": "Safeway", "unit": "bulb", "url": "https://www.safeway.com/" }
+    },
+    {
+      "ingredient_id": "ginger",
+      "conventional": { "amount": 2.98, "store": "Walmart", "unit": "1 lb", "url": "https://www.walmart.com/" },
+      "organic": { "amount": 4.49, "store": "Safeway", "unit": "1 lb", "url": "https://www.safeway.com/" }
+    },
+    {
+      "ingredient_id": "cumin",
+      "conventional": { "amount": 1.98, "store": "Walmart", "unit": "2.5 oz", "url": "https://www.walmart.com/" },
+      "organic": { "amount": 3.29, "store": "Safeway", "unit": "1.8 oz", "url": "https://www.safeway.com/" }
+    },
+    {
+      "ingredient_id": "honey",
+      "conventional": { "amount": 4.48, "store": "Walmart", "unit": "12 oz", "url": "https://www.walmart.com/" },
+      "organic": { "amount": 6.99, "store": "Costco", "unit": "40 oz", "url": "https://www.costco.com/" }
+    }
+  ]
+}

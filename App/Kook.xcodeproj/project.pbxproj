@@ -1,0 +1,472 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D0DEB48487FA4F399801BAD8 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A956440ACBEF4265A004A5B5 /* Models.swift */; };
+		3598C7452401456D85D3A4C0 /* NutritionThresholds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA6540935884C0DA386F39E /* NutritionThresholds.swift */; };
+		34E2A452BA574CCB8E6D835D /* KookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89748C71B2B401E80BE4731 /* KookApp.swift */; };
+		A53CD02A9ACE4F7E808304EB /* IngredientSwapService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7C525A1A37489D9A0FFB40 /* IngredientSwapService.swift */; };
+		C1328393EBCC487BB17BD5E2 /* MealPlanService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3438E33EAD8A4F278B859538 /* MealPlanService.swift */; };
+		94EB259CF2264A00BF7225CE /* PreferencesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0ABD86CC26E43B3AEDCD010 /* PreferencesStore.swift */; };
+		C555C6754E5447AE815EC11C /* PriceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F249F7AF68146BC9E653B53 /* PriceProvider.swift */; };
+		65E3DC99C52B49359A1C278A /* RecipeValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC627A16C874EE081BDA7BD /* RecipeValidator.swift */; };
+		00DAA076E81B440C97287E56 /* SeasonalityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DA89E2228445DE88BB6BC7 /* SeasonalityService.swift */; };
+		3ADFCF27EA5E439E8564AF90 /* ShoppingListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F09F80F9534D29AB056BA6 /* ShoppingListService.swift */; };
+		3AC9F6C748B24DC88A56159D /* DisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48B1EB33CA94CF5A327F116 /* DisclaimerView.swift */; };
+		7584D992EB924B2A8B1F9E63 /* IngredientCustomizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E53A237B794932BE5015B9 /* IngredientCustomizeView.swift */; };
+		96D8DED149C142A2ABBC9E97 /* PlanSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77094101C12B4D9CA5CE76EE /* PlanSummaryView.swift */; };
+		665D482F39D843A7BFE5A45D /* QuestionnaireView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC48AF22E6D940BBAE1A6270 /* QuestionnaireView.swift */; };
+		265E0ACF095D41748923469C /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F43B97BDC64A6AB0214FA5 /* RecipeDetailView.swift */; };
+		E50B24671B1B4B3A9C2C55C5 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CBBA693AAE4D049AFB4673 /* RootView.swift */; };
+		864F825A9DC04407B66B2C3E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3BD2E7B2FB42218409D773 /* SettingsView.swift */; };
+		9719ED87504348148403CEA8 /* ShoppingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A280AA389BFC4040B3E48DC9 /* ShoppingListView.swift */; };
+		D2C7DD7F11FA4FDE8B545016 /* health_verdict_rules.json in Resources */ = {isa = PBXBuildFile; fileRef = 7AB1871973FA46669D54328E /* health_verdict_rules.json */; };
+		862DB97DA8634A909C5167B2 /* nutrition_thresholds.json in Resources */ = {isa = PBXBuildFile; fileRef = ADA75E240148479D922C7F70 /* nutrition_thresholds.json */; };
+		5F60B51FBE5E4F23ADD799F0 /* price_fixtures.json in Resources */ = {isa = PBXBuildFile; fileRef = DC40D340778643EB84385647 /* price_fixtures.json */; };
+		58B72CB269274C00AC9E5DE7 /* recipes.json in Resources */ = {isa = PBXBuildFile; fileRef = CAED9467828F49CBB892F452 /* recipes.json */; };
+		9A754179FCB5489A8D4CD9E5 /* seasonal_produce_us.json in Resources */ = {isa = PBXBuildFile; fileRef = 9CD68D90CA4C4519A93F2985 /* seasonal_produce_us.json */; };
+		760D8B8C050349A69DA61E59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D01408909AC466CA88D1DE8 /* Assets.xcassets */; };
+		A3C59E7D409F449896CA3BFF /* RecipeValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C852C0075C428EB95F7D1A /* RecipeValidatorTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A10000000000000000000012 /* Kook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kook.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A10000000000000000000013 /* KookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A956440ACBEF4265A004A5B5 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		6BA6540935884C0DA386F39E /* NutritionThresholds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionThresholds.swift; sourceTree = "<group>"; };
+		D89748C71B2B401E80BE4731 /* KookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KookApp.swift; sourceTree = "<group>"; };
+		6C7C525A1A37489D9A0FFB40 /* IngredientSwapService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientSwapService.swift; sourceTree = "<group>"; };
+		3438E33EAD8A4F278B859538 /* MealPlanService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlanService.swift; sourceTree = "<group>"; };
+		D0ABD86CC26E43B3AEDCD010 /* PreferencesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesStore.swift; sourceTree = "<group>"; };
+		0F249F7AF68146BC9E653B53 /* PriceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceProvider.swift; sourceTree = "<group>"; };
+		6FC627A16C874EE081BDA7BD /* RecipeValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeValidator.swift; sourceTree = "<group>"; };
+		D3DA89E2228445DE88BB6BC7 /* SeasonalityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonalityService.swift; sourceTree = "<group>"; };
+		B4F09F80F9534D29AB056BA6 /* ShoppingListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListService.swift; sourceTree = "<group>"; };
+		F48B1EB33CA94CF5A327F116 /* DisclaimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclaimerView.swift; sourceTree = "<group>"; };
+		30E53A237B794932BE5015B9 /* IngredientCustomizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientCustomizeView.swift; sourceTree = "<group>"; };
+		77094101C12B4D9CA5CE76EE /* PlanSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanSummaryView.swift; sourceTree = "<group>"; };
+		FC48AF22E6D940BBAE1A6270 /* QuestionnaireView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireView.swift; sourceTree = "<group>"; };
+		13F43B97BDC64A6AB0214FA5 /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
+		E4CBBA693AAE4D049AFB4673 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		4D3BD2E7B2FB42218409D773 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A280AA389BFC4040B3E48DC9 /* ShoppingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListView.swift; sourceTree = "<group>"; };
+		52C852C0075C428EB95F7D1A /* RecipeValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeValidatorTests.swift; sourceTree = "<group>"; };
+		7AB1871973FA46669D54328E /* health_verdict_rules.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = health_verdict_rules.json; sourceTree = "<group>"; };
+		ADA75E240148479D922C7F70 /* nutrition_thresholds.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = nutrition_thresholds.json; sourceTree = "<group>"; };
+		DC40D340778643EB84385647 /* price_fixtures.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = price_fixtures.json; sourceTree = "<group>"; };
+		CAED9467828F49CBB892F452 /* recipes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = recipes.json; sourceTree = "<group>"; };
+		9CD68D90CA4C4519A93F2985 /* seasonal_produce_us.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = seasonal_produce_us.json; sourceTree = "<group>"; };
+		8D01408909AC466CA88D1DE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A10000000000000000000022 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A10000000000000000000024 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D821256DA41040F8B9818F7B /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				A956440ACBEF4265A004A5B5 /* Models.swift */,
+				6BA6540935884C0DA386F39E /* NutritionThresholds.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		9E6E1C31614F4C29BE30BE74 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				6C7C525A1A37489D9A0FFB40 /* IngredientSwapService.swift */,
+				3438E33EAD8A4F278B859538 /* MealPlanService.swift */,
+				D0ABD86CC26E43B3AEDCD010 /* PreferencesStore.swift */,
+				0F249F7AF68146BC9E653B53 /* PriceProvider.swift */,
+				6FC627A16C874EE081BDA7BD /* RecipeValidator.swift */,
+				D3DA89E2228445DE88BB6BC7 /* SeasonalityService.swift */,
+				B4F09F80F9534D29AB056BA6 /* ShoppingListService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		7CF11F1990734709826DA399 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F48B1EB33CA94CF5A327F116 /* DisclaimerView.swift */,
+				30E53A237B794932BE5015B9 /* IngredientCustomizeView.swift */,
+				77094101C12B4D9CA5CE76EE /* PlanSummaryView.swift */,
+				FC48AF22E6D940BBAE1A6270 /* QuestionnaireView.swift */,
+				13F43B97BDC64A6AB0214FA5 /* RecipeDetailView.swift */,
+				E4CBBA693AAE4D049AFB4673 /* RootView.swift */,
+				4D3BD2E7B2FB42218409D773 /* SettingsView.swift */,
+				A280AA389BFC4040B3E48DC9 /* ShoppingListView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A10000000000000000000005 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7AB1871973FA46669D54328E /* health_verdict_rules.json */,
+				ADA75E240148479D922C7F70 /* nutrition_thresholds.json */,
+				DC40D340778643EB84385647 /* price_fixtures.json */,
+				CAED9467828F49CBB892F452 /* recipes.json */,
+				9CD68D90CA4C4519A93F2985 /* seasonal_produce_us.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A10000000000000000000004 /* Kook */ = {
+			isa = PBXGroup;
+			children = (
+				D89748C71B2B401E80BE4731 /* KookApp.swift */,
+				D821256DA41040F8B9818F7B /* Domain */,
+				9E6E1C31614F4C29BE30BE74 /* Services */,
+				7CF11F1990734709826DA399 /* Views */,
+				A10000000000000000000005 /* Resources */,
+				8D01408909AC466CA88D1DE8 /* Assets.xcassets */,
+			);
+			path = Kook;
+			sourceTree = "<group>";
+		};
+		A10000000000000000000006 /* KookTests */ = {
+			isa = PBXGroup;
+			children = (
+				52C852C0075C428EB95F7D1A /* RecipeValidatorTests.swift */,
+			);
+			path = KookTests;
+			sourceTree = "<group>";
+		};
+		A10000000000000000000003 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A10000000000000000000012 /* Kook.app */,
+				A10000000000000000000013 /* KookTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A10000000000000000000002 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				A10000000000000000000004 /* Kook */,
+				A10000000000000000000006 /* KookTests */,
+				A10000000000000000000003 /* Products */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A10000000000000000000010 /* Kook */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A10000000000000000000030 /* Build configuration list for PBXNativeTarget "Kook" */;
+			buildPhases = (
+				A10000000000000000000020 /* Sources */,
+				A10000000000000000000022 /* Frameworks */,
+				A10000000000000000000021 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Kook;
+			productName = Kook;
+			productReference = A10000000000000000000012 /* Kook.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A10000000000000000000011 /* KookTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A10000000000000000000031 /* Build configuration list for PBXNativeTarget "KookTests" */;
+			buildPhases = (
+				A10000000000000000000023 /* Sources */,
+				A10000000000000000000024 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				35CF88D30A034CB9AC20CB7F /* PBXTargetDependency */,
+			);
+			name = KookTests;
+			productName = KookTests;
+			productReference = A10000000000000000000013 /* KookTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A10000000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					A10000000000000000000010 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					A10000000000000000000011 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = A10000000000000000000010;
+					};
+				};
+			};
+			buildConfigurationList = A10000000000000000000032 /* Build configuration list for PBXProject "Kook" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A10000000000000000000002;
+			productRefGroup = A10000000000000000000003 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A10000000000000000000010 /* Kook */,
+				A10000000000000000000011 /* KookTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A10000000000000000000021 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2C7DD7F11FA4FDE8B545016 /* health_verdict_rules.json in Resources */,
+				862DB97DA8634A909C5167B2 /* nutrition_thresholds.json in Resources */,
+				5F60B51FBE5E4F23ADD799F0 /* price_fixtures.json in Resources */,
+				58B72CB269274C00AC9E5DE7 /* recipes.json in Resources */,
+				9A754179FCB5489A8D4CD9E5 /* seasonal_produce_us.json in Resources */,
+				760D8B8C050349A69DA61E59 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A10000000000000000000020 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0DEB48487FA4F399801BAD8 /* Models.swift in Sources */,
+				3598C7452401456D85D3A4C0 /* NutritionThresholds.swift in Sources */,
+				34E2A452BA574CCB8E6D835D /* KookApp.swift in Sources */,
+				A53CD02A9ACE4F7E808304EB /* IngredientSwapService.swift in Sources */,
+				C1328393EBCC487BB17BD5E2 /* MealPlanService.swift in Sources */,
+				94EB259CF2264A00BF7225CE /* PreferencesStore.swift in Sources */,
+				C555C6754E5447AE815EC11C /* PriceProvider.swift in Sources */,
+				65E3DC99C52B49359A1C278A /* RecipeValidator.swift in Sources */,
+				00DAA076E81B440C97287E56 /* SeasonalityService.swift in Sources */,
+				3ADFCF27EA5E439E8564AF90 /* ShoppingListService.swift in Sources */,
+				3AC9F6C748B24DC88A56159D /* DisclaimerView.swift in Sources */,
+				7584D992EB924B2A8B1F9E63 /* IngredientCustomizeView.swift in Sources */,
+				96D8DED149C142A2ABBC9E97 /* PlanSummaryView.swift in Sources */,
+				665D482F39D843A7BFE5A45D /* QuestionnaireView.swift in Sources */,
+				265E0ACF095D41748923469C /* RecipeDetailView.swift in Sources */,
+				E50B24671B1B4B3A9C2C55C5 /* RootView.swift in Sources */,
+				864F825A9DC04407B66B2C3E /* SettingsView.swift in Sources */,
+				9719ED87504348148403CEA8 /* ShoppingListView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A10000000000000000000023 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3C59E7D409F449896CA3BFF /* RecipeValidatorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		35CF88D30A034CB9AC20CB7F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A10000000000000000000010 /* Kook */;
+			targetProxy = ABE6D9118B5742D2B50D334C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXContainerItemProxy section */
+		ABE6D9118B5742D2B50D334C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A10000000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A10000000000000000000010;
+			remoteInfo = Kook;
+		};
+/* End PBXContainerItemProxy section */
+/* Begin XCBuildConfiguration section */
+		A10000000000000000000044 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_DYNAMIC_NO_PIC = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("DEBUG=1" "$(inherited)");
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A10000000000000000000045 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_DYNAMIC_NO_PIC = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A10000000000000000000040 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Kook";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait";
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)" "@executable_path/Frameworks");
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.susilab.kook;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1";
+			};
+			name = Debug;
+		};
+		A10000000000000000000041 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Kook";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait";
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)" "@executable_path/Frameworks");
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.susilab.kook;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1";
+			};
+			name = Release;
+		};
+		A10000000000000000000042 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.susilab.kook.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kook.app/Kook";
+			};
+			name = Debug;
+		};
+		A10000000000000000000043 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.susilab.kook.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kook.app/Kook";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A10000000000000000000032 /* Build configuration list for PBXProject "Kook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A10000000000000000000044 /* Debug */,
+				A10000000000000000000045 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A10000000000000000000030 /* Build configuration list for PBXNativeTarget "Kook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A10000000000000000000040 /* Debug */,
+				A10000000000000000000041 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A10000000000000000000031 /* Build configuration list for PBXNativeTarget "KookTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A10000000000000000000042 /* Debug */,
+				A10000000000000000000043 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A10000000000000000000001 /* Project object */;
+}

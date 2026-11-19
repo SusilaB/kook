@@ -1,0 +1,134 @@
+{
+  "version": 1,
+  "recipes": [
+    {
+      "id": "american-oat-berry-bowl",
+      "name": "Berry Oat Breakfast Bowl",
+      "cuisine": "american",
+      "meal_times": ["breakfast"],
+      "servings": 2,
+      "vegetarian": true,
+      "allergens": ["milk"],
+      "sugar_tags": ["diabetic_friendly", "low_carb"],
+      "added_sugar_grams_per_serving": 0,
+      "net_carbs_grams_per_serving": 28,
+      "total_sugar_grams_per_serving": 9,
+      "seasonal_ingredients": ["strawberry", "blueberry"],
+      "ingredients": [
+        { "id": "rolled_oats", "name": "Rolled oats", "quantity": 1, "unit": "cup", "allergens": [], "tags": ["grain"], "notes": "Choose certified gluten-free oats if wheat-allergic (cross-contact risk)" },
+        { "id": "plain_yogurt", "name": "Plain Greek yogurt", "quantity": 1, "unit": "cup", "allergens": ["milk"], "tags": ["dairy"] },
+        { "id": "strawberry", "name": "Fresh strawberries", "quantity": 1, "unit": "cup", "allergens": [], "tags": ["produce", "fruit"] },
+        { "id": "blueberry", "name": "Fresh blueberries", "quantity": 0.5, "unit": "cup", "allergens": [], "tags": ["produce", "fruit"] },
+        { "id": "chia_seeds", "name": "Chia seeds", "quantity": 1, "unit": "tbsp", "allergens": [], "tags": ["seed"] },
+        { "id": "honey", "name": "Honey", "quantity": 0, "unit": "tsp", "allergens": [], "tags": ["optional_sweetener"], "notes": "Omit for no_added_sugar mode; recipe marked diabetic_friendly without it" }
+      ],
+      "steps": [
+        "Divide oats between bowls.",
+        "Top each bowl with Greek yogurt.",
+        "Add sliced strawberries and blueberries.",
+        "Sprinkle chia seeds. Do not add honey if following no-added-sugar."
+      ],
+      "cross_contact_notes": "Oats may be processed on shared wheat equipment; labeled wheat allergen when not certified gluten-free."
+    },
+    {
+      "id": "indian-chana-masala",
+      "name": "Chana Masala with Brown Rice",
+      "cuisine": "indian",
+      "meal_times": ["lunch", "dinner"],
+      "servings": 4,
+      "vegetarian": true,
+      "allergens": [],
+      "sugar_tags": ["no_added_sugar", "diabetic_friendly"],
+      "added_sugar_grams_per_serving": 0,
+      "net_carbs_grams_per_serving": 42,
+      "total_sugar_grams_per_serving": 6,
+      "seasonal_ingredients": ["tomato", "cilantro"],
+      "ingredients": [
+        { "id": "chickpeas", "name": "Cooked chickpeas", "quantity": 3, "unit": "cups", "allergens": [], "tags": ["legume"] },
+        { "id": "tomato", "name": "Diced tomatoes", "quantity": 2, "unit": "cups", "allergens": [], "tags": ["produce"] },
+        { "id": "onion", "name": "Yellow onion", "quantity": 1, "unit": "medium", "allergens": [], "tags": ["produce"] },
+        { "id": "garlic", "name": "Garlic cloves", "quantity": 3, "unit": "cloves", "allergens": [], "tags": ["produce"] },
+        { "id": "ginger", "name": "Fresh ginger", "quantity": 1, "unit": "tbsp", "allergens": [], "tags": ["produce"] },
+        { "id": "cumin", "name": "Ground cumin", "quantity": 1, "unit": "tsp", "allergens": [], "tags": ["spice"] },
+        { "id": "coriander", "name": "Ground coriander", "quantity": 1, "unit": "tsp", "allergens": [], "tags": ["spice"] },
+        { "id": "turmeric", "name": "Turmeric", "quantity": 0.5, "unit": "tsp", "allergens": [], "tags": ["spice"] },
+        { "id": "olive_oil", "name": "Olive oil", "quantity": 2, "unit": "tbsp", "allergens": [], "tags": ["fat"] },
+        { "id": "brown_rice", "name": "Cooked brown rice", "quantity": 3, "unit": "cups", "allergens": [], "tags": ["grain"] },
+        { "id": "cilantro", "name": "Fresh cilantro", "quantity": 0.25, "unit": "cup", "allergens": [], "tags": ["produce", "herb"] }
+      ],
+      "steps": [
+        "Warm olive oil in a pot over medium heat. Sauté onion until soft.",
+        "Add garlic and ginger; cook 1 minute.",
+        "Stir in cumin, coriander, and turmeric.",
+        "Add tomatoes and chickpeas. Simmer 15 minutes until thick.",
+        "Serve over brown rice and garnish with cilantro."
+      ],
+      "cross_contact_notes": ""
+    },
+    {
+      "id": "mediterranean-lemon-chicken",
+      "name": "Lemon Herb Chicken with Quinoa Salad",
+      "cuisine": "mediterranean",
+      "meal_times": ["lunch", "dinner"],
+      "servings": 4,
+      "vegetarian": false,
+      "allergens": [],
+      "sugar_tags": ["no_added_sugar", "diabetic_friendly", "low_carb"],
+      "added_sugar_grams_per_serving": 0,
+      "net_carbs_grams_per_serving": 22,
+      "total_sugar_grams_per_serving": 3,
+      "seasonal_ingredients": ["cucumber", "tomato", "lemon"],
+      "ingredients": [
+        { "id": "chicken_breast", "name": "Boneless chicken breast", "quantity": 1.5, "unit": "lb", "allergens": [], "tags": ["meat", "poultry"] },
+        { "id": "lemon", "name": "Lemon juice", "quantity": 3, "unit": "tbsp", "allergens": [], "tags": ["produce"] },
+        { "id": "olive_oil", "name": "Olive oil", "quantity": 3, "unit": "tbsp", "allergens": [], "tags": ["fat"] },
+        { "id": "garlic", "name": "Garlic cloves", "quantity": 2, "unit": "cloves", "allergens": [], "tags": ["produce"] },
+        { "id": "oregano", "name": "Dried oregano", "quantity": 1, "unit": "tsp", "allergens": [], "tags": ["spice"] },
+        { "id": "quinoa", "name": "Cooked quinoa", "quantity": 2, "unit": "cups", "allergens": [], "tags": ["grain"] },
+        { "id": "cucumber", "name": "Cucumber", "quantity": 1, "unit": "medium", "allergens": [], "tags": ["produce"] },
+        { "id": "tomato", "name": "Cherry tomatoes", "quantity": 1.5, "unit": "cups", "allergens": [], "tags": ["produce"] },
+        { "id": "parsley", "name": "Fresh parsley", "quantity": 0.25, "unit": "cup", "allergens": [], "tags": ["produce", "herb"] }
+      ],
+      "steps": [
+        "Marinate chicken in lemon juice, 2 tbsp olive oil, garlic, and oregano for 20 minutes.",
+        "Grill or pan-sear chicken until cooked through (165°F / 74°C).",
+        "Toss quinoa with cucumber, tomatoes, parsley, and remaining olive oil.",
+        "Slice chicken and serve over the quinoa salad."
+      ],
+      "cross_contact_notes": ""
+    },
+    {
+      "id": "mexican-veggie-tacos",
+      "name": "Black Bean Veggie Tacos",
+      "cuisine": "mexican",
+      "meal_times": ["lunch", "dinner", "snack"],
+      "servings": 4,
+      "vegetarian": true,
+      "allergens": [],
+      "sugar_tags": ["no_added_sugar", "diabetic_friendly"],
+      "added_sugar_grams_per_serving": 0,
+      "net_carbs_grams_per_serving": 38,
+      "total_sugar_grams_per_serving": 4,
+      "seasonal_ingredients": ["avocado", "tomato", "cilantro", "lime"],
+      "ingredients": [
+        { "id": "black_beans", "name": "Cooked black beans", "quantity": 2.5, "unit": "cups", "allergens": [], "tags": ["legume"] },
+        { "id": "corn_tortilla", "name": "Corn tortillas (100% corn)", "quantity": 8, "unit": "pieces", "allergens": [], "tags": ["grain"], "notes": "Must be 100% corn; do not substitute flour tortillas" },
+        { "id": "avocado", "name": "Avocado", "quantity": 2, "unit": "medium", "allergens": [], "tags": ["produce"] },
+        { "id": "tomato", "name": "Diced tomato", "quantity": 1, "unit": "cup", "allergens": [], "tags": ["produce"] },
+        { "id": "cabbage", "name": "Shredded cabbage", "quantity": 2, "unit": "cups", "allergens": [], "tags": ["produce"] },
+        { "id": "lime", "name": "Lime wedges", "quantity": 2, "unit": "limes", "allergens": [], "tags": ["produce"] },
+        { "id": "cumin", "name": "Ground cumin", "quantity": 1, "unit": "tsp", "allergens": [], "tags": ["spice"] },
+        { "id": "chili_powder", "name": "Chili powder", "quantity": 1, "unit": "tsp", "allergens": [], "tags": ["spice"] },
+        { "id": "olive_oil", "name": "Olive oil", "quantity": 1, "unit": "tbsp", "allergens": [], "tags": ["fat"] },
+        { "id": "cilantro", "name": "Fresh cilantro", "quantity": 0.25, "unit": "cup", "allergens": [], "tags": ["produce", "herb"] }
+      ],
+      "steps": [
+        "Warm olive oil; season black beans with cumin and chili powder until hot.",
+        "Warm 100% corn tortillas (do not use flour tortillas).",
+        "Fill tortillas with beans, cabbage, tomato, and avocado.",
+        "Finish with cilantro and lime."
+      ],
+      "cross_contact_notes": "Some packaged corn tortillas are made on shared wheat lines; check labels if wheat-allergic."
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+name: Validate recipes
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run deterministic recipe validator
+        run: python3 tools/validate_recipes.py

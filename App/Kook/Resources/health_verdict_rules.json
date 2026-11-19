@@ -1,0 +1,93 @@
+{
+  "version": 1,
+  "organic_premium_threshold_percent": 25,
+  "rules": [
+    {
+      "id": "swap_white_rice_to_brown",
+      "from_ingredient_id": "white_rice",
+      "to_ingredient_id": "brown_rice",
+      "verdict": "healthy",
+      "reason": "Brown rice retains bran and germ, providing more fiber than refined white rice for the same grain role.",
+      "sources": [
+        "USDA FoodData Central: brown rice vs white rice fiber comparison (https://fdc.nal.usda.gov/)",
+        "Dietary Guidelines for Americans — make half your grains whole (https://www.dietaryguidelines.gov/)"
+      ]
+    },
+    {
+      "id": "swap_brown_rice_to_white",
+      "from_ingredient_id": "brown_rice",
+      "to_ingredient_id": "white_rice",
+      "verdict": "unhealthy",
+      "reason": "Replacing brown rice with white rice removes fiber-rich bran; refined grains are less aligned with DGA whole-grain guidance.",
+      "sources": [
+        "Dietary Guidelines for Americans — whole grains (https://www.dietaryguidelines.gov/)",
+        "USDA FoodData Central (https://fdc.nal.usda.gov/)"
+      ]
+    },
+    {
+      "id": "swap_yogurt_to_soda",
+      "from_ingredient_id": "plain_yogurt",
+      "to_ingredient_id": "soda",
+      "verdict": "unhealthy",
+      "reason": "Sugar-sweetened soft drinks add empty calories and added sugars without the protein of plain yogurt.",
+      "sources": [
+        "FDA Added Sugars on the Nutrition Facts label (https://www.fda.gov/food/nutrition-facts-label/added-sugars-nutrition-facts-label)",
+        "Dietary Guidelines for Americans — limit added sugars (https://www.dietaryguidelines.gov/)"
+      ]
+    },
+    {
+      "id": "swap_chicken_to_tofu",
+      "from_ingredient_id": "chicken_breast",
+      "to_ingredient_id": "tofu",
+      "verdict": "healthy",
+      "reason": "Firm tofu is a lean plant protein alternative with less saturated fat than many animal proteins when prepared simply.",
+      "sources": [
+        "USDA FoodData Central — tofu / chicken nutrient profiles (https://fdc.nal.usda.gov/)",
+        "Dietary Guidelines for Americans — vary protein sources (https://www.dietaryguidelines.gov/)"
+      ]
+    },
+    {
+      "id": "swap_olive_oil_to_lard",
+      "from_ingredient_id": "olive_oil",
+      "to_ingredient_id": "lard",
+      "verdict": "unhealthy",
+      "reason": "Lard is higher in saturated fat than olive oil; DGA encourages shifting toward oils higher in unsaturated fat. Lard is also non-vegetarian.",
+      "sources": [
+        "Dietary Guidelines for Americans — oils and saturated fat (https://www.dietaryguidelines.gov/)",
+        "USDA FoodData Central (https://fdc.nal.usda.gov/)"
+      ]
+    },
+    {
+      "id": "swap_avocado_to_sour_cream",
+      "from_ingredient_id": "avocado",
+      "to_ingredient_id": "sour_cream",
+      "verdict": "unhealthy",
+      "reason": "Avocado contributes unsaturated fats and fiber; sour cream adds saturated fat and milk allergen without comparable fiber.",
+      "sources": [
+        "USDA FoodData Central (https://fdc.nal.usda.gov/)",
+        "Dietary Guidelines for Americans — dietary fats (https://www.dietaryguidelines.gov/)"
+      ]
+    },
+    {
+      "id": "swap_tortilla_flour_for_corn",
+      "from_ingredient_id": "flour_tortilla",
+      "to_ingredient_id": "corn_tortilla",
+      "verdict": "healthy",
+      "reason": "Corn tortillas avoid wheat (major allergen) when labeled 100% corn and are typically lower in sodium than many flour tortillas.",
+      "sources": [
+        "FDA Food Allergen Labeling (FALCPA / FASTER Act) major allergens (https://www.fda.gov/food/food-allergensgluten-free-guidance-documents-regulatory-information/food-allergen-labeling-and-consumer-protection-act-2004-falcpa)",
+        "USDA FoodData Central (https://fdc.nal.usda.gov/)"
+      ]
+    },
+    {
+      "id": "default_unknown",
+      "from_ingredient_id": "*",
+      "to_ingredient_id": "*",
+      "verdict": "unhealthy",
+      "reason": "No sourced rule matches this swap; prototype defaults to caution until a cited rule exists.",
+      "sources": [
+        "Kook HealthVerdictRules table (in-app) — unknown swaps are not LLM-evaluated"
+      ]
+    }
+  ]
+}
