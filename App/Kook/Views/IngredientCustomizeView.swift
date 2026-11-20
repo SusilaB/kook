@@ -36,6 +36,7 @@ struct IngredientCustomizeView: View {
                     )
                 }
                 .disabled(selectedReplacement.isEmpty)
+                .accessibilityIdentifier("ingredient.swap.evaluate")
             }
 
             if let verdict {
@@ -45,7 +46,9 @@ struct IngredientCustomizeView: View {
                         systemImage: verdict.kind == .healthy ? "checkmark.seal.fill" : "xmark.octagon.fill"
                     )
                     .foregroundStyle(verdict.kind == .healthy ? .green : .red)
+                    .accessibilityIdentifier("ingredient.swap.verdict.kind")
                     Text(verdict.reason)
+                        .accessibilityIdentifier("ingredient.swap.verdict.reason")
                     VStack(alignment: .leading, spacing: 4) {
                         Text("Sources").font(.caption).bold()
                         ForEach(verdict.sources, id: \.self) { source in
@@ -54,9 +57,11 @@ struct IngredientCustomizeView: View {
                                 .foregroundStyle(.secondary)
                         }
                     }
+                    .accessibilityIdentifier("ingredient.swap.verdict.sources")
                 }
             }
         }
         .navigationTitle("Customize")
+        .accessibilityIdentifier("ingredient.customize.screen")
     }
 }

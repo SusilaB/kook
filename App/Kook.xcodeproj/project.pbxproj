@@ -31,6 +31,9 @@
 		9A754179FCB5489A8D4CD9E5 /* seasonal_produce_us.json in Resources */ = {isa = PBXBuildFile; fileRef = 9CD68D90CA4C4519A93F2985 /* seasonal_produce_us.json */; };
 		760D8B8C050349A69DA61E59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D01408909AC466CA88D1DE8 /* Assets.xcassets */; };
 		A3C59E7D409F449896CA3BFF /* RecipeValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C852C0075C428EB95F7D1A /* RecipeValidatorTests.swift */; };
+		B1A2C3D4E5F60718293A4B5C /* ShoppingListPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A2B3C4D5E60718293A4B5C /* ShoppingListPresentation.swift */; };
+		F1A2B3C4E5F60718293A4B5C /* DisclaimerPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B3C4D5E6F708192A3B4C5D /* DisclaimerPresentation.swift */; };
+		D1A2B3C4E5F60718293A4B5C /* ScreenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A2B3C4D5E60718293A4B5C /* ScreenTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +58,9 @@
 		4D3BD2E7B2FB42218409D773 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A280AA389BFC4040B3E48DC9 /* ShoppingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListView.swift; sourceTree = "<group>"; };
 		52C852C0075C428EB95F7D1A /* RecipeValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeValidatorTests.swift; sourceTree = "<group>"; };
+		C1A2B3C4D5E60718293A4B5C /* ShoppingListPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListPresentation.swift; sourceTree = "<group>"; };
+		A2B3C4D5E6F708192A3B4C5D /* DisclaimerPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclaimerPresentation.swift; sourceTree = "<group>"; };
+		E1A2B3C4D5E60718293A4B5C /* ScreenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTests.swift; sourceTree = "<group>"; };
 		7AB1871973FA46669D54328E /* health_verdict_rules.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = health_verdict_rules.json; sourceTree = "<group>"; };
 		ADA75E240148479D922C7F70 /* nutrition_thresholds.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = nutrition_thresholds.json; sourceTree = "<group>"; };
 		DC40D340778643EB84385647 /* price_fixtures.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = price_fixtures.json; sourceTree = "<group>"; };
@@ -115,6 +121,8 @@
 				E4CBBA693AAE4D049AFB4673 /* RootView.swift */,
 				4D3BD2E7B2FB42218409D773 /* SettingsView.swift */,
 				A280AA389BFC4040B3E48DC9 /* ShoppingListView.swift */,
+				C1A2B3C4D5E60718293A4B5C /* ShoppingListPresentation.swift */,
+				A2B3C4D5E6F708192A3B4C5D /* DisclaimerPresentation.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -148,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				52C852C0075C428EB95F7D1A /* RecipeValidatorTests.swift */,
+				E1A2B3C4D5E60718293A4B5C /* ScreenTests.swift */,
 			);
 			path = KookTests;
 			sourceTree = "<group>";
@@ -285,6 +294,8 @@
 				E50B24671B1B4B3A9C2C55C5 /* RootView.swift in Sources */,
 				864F825A9DC04407B66B2C3E /* SettingsView.swift in Sources */,
 				9719ED87504348148403CEA8 /* ShoppingListView.swift in Sources */,
+				B1A2C3D4E5F60718293A4B5C /* ShoppingListPresentation.swift in Sources */,
+				F1A2B3C4E5F60718293A4B5C /* DisclaimerPresentation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3C59E7D409F449896CA3BFF /* RecipeValidatorTests.swift in Sources */,
+				D1A2B3C4E5F60718293A4B5C /* ScreenTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +372,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
+				ENABLE_TESTABILITY = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Kook";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

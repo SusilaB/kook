@@ -51,47 +51,46 @@ private struct ShoppingRow: View {
             if let price = item.price {
                 priceBlock(price)
             } else {
-                Text("Price unavailable")
+                Text(ShoppingListPresentation.priceUnavailable)
                     .foregroundStyle(.secondary)
+                    .accessibilityIdentifier("shopping.price.unavailable")
             }
         }
         .padding(.vertical, 4)
+        .accessibilityIdentifier("shopping.row.\(item.id)")
     }
 
     @ViewBuilder
     private func priceBlock(_ price: IngredientPrice) -> some View {
         VStack(alignment: .leading, spacing: 4) {
-            offerLine(label: "Conventional", offer: price.conventional)
-            offerLine(label: "Organic", offer: price.organic)
+            Text(ShoppingListPresentation.offerLine(label: "Conventional", offer: price.conventional))
+                .font(.subheadline)
+                .foregroundStyle(
+                    price.conventional.unavailable || price.conventional.amount == nil ? .secondary : .primary
+                )
+            Text(ShoppingListPresentation.offerLine(label: "Organic", offer: price.organic))
+                .font(.subheadline)
+                .foregroundStyle(
+                    price.organic.unavailable || price.organic.amount == nil ? .secondary : .primary
+                )
             if let premium = price.organicPremiumPercent {
-                Text(String(format: "Organic premium: %.0f%%", premium))
+                Text(ShoppingListPresentation.organicPremiumLine(percent: premium))
                     .font(.caption)
                     .foregroundStyle(price.exceedsOrganicPremiumThreshold ? .orange : .secondary)
-                if price.exceedsOrganicPremiumThreshold {
-                    Text("Over 25% premium — conventional may be better value; quality still wins if you choose organic.")
+                    .accessibilityIdentifier("shopping.organic.premium")
+                if let note = ShoppingListPresentation.organicPremiumValueNote(
+                    exceedsThreshold: price.exceedsOrganicPremiumThreshold
+                ) {
+                    Text(note)
                         .font(.caption2)
                         .foregroundStyle(.orange)
+                        .accessibilityIdentifier("shopping.organic.premium.warning")
                 }
             }
-            if preferOrganic, !price.organic.unavailable, let store = price.organic.store {
-                Text("Buy (organic): \(store)")
-                    .font(.caption)
-            } else if let store = price.conventional.store {
-                Text("Buy (conventional): \(store)")
+            if let hint = ShoppingListPresentation.buyHint(preferOrganic: preferOrganic, price: price) {
+                Text(hint)
                     .font(.caption)
             }
-        }
-    }
-
-    @ViewBuilder
-    private func offerLine(label: String, offer: PricedOffer) -> some View {
-        if offer.unavailable || offer.amount == nil {
-            Text("\(label): price unavailable")
-                .font(.subheadline)
-                .foregroundStyle(.secondary)
-        } else if let amount = offer.amount {
-            Text("\(label): $\(String(format: "%.2f", amount)) · \(offer.store ?? "?") · \(offer.unit ?? "")")
-                .font(.subheadline)
         }
     }
 
