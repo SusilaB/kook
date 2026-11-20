@@ -7,6 +7,9 @@ final class PreferencesStore: ObservableObject {
         didSet { persist() }
     }
 
+    /// True while the user reopened the questionnaire from Plan / Settings to change filters.
+    @Published private(set) var isEditingQuestionnaire = false
+
     private let key = "kook.userPreferences.v1"
     private let defaults: UserDefaults
 
@@ -24,7 +27,25 @@ final class PreferencesStore: ObservableObject {
         preferences.acceptedDisclaimer = true
     }
 
+    /// Leave the plan tab and reopen the mood questionnaire with current answers.
+    func beginEditingQuestionnaire() {
+        isEditingQuestionnaire = true
+        var next = preferences
+        next.completedQuestionnaire = false
+        preferences = next
+    }
+
+    /// Discard questionnaire edits and return to the existing plan.
+    func cancelQuestionnaireEdit() {
+        guard isEditingQuestionnaire else { return }
+        isEditingQuestionnaire = false
+        var next = preferences
+        next.completedQuestionnaire = true
+        preferences = next
+    }
+
     func skipQuestionnaireAndUseDefaults() {
+        isEditingQuestionnaire = false
         var next = preferences
         next.completedQuestionnaire = true
         next.cuisine = nil
@@ -37,6 +58,7 @@ final class PreferencesStore: ObservableObject {
     }
 
     func saveQuestionnaire(_ value: UserPreferences) {
+        isEditingQuestionnaire = false
         var next = value
         next.acceptedDisclaimer = true
         next.completedQuestionnaire = true
@@ -44,6 +66,7 @@ final class PreferencesStore: ObservableObject {
     }
 
     func resetOnboarding() {
+        isEditingQuestionnaire = false
         preferences = .default
     }
 

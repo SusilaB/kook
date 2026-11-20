@@ -30,10 +30,7 @@ struct SettingsView: View {
 
                 Section {
                     Button("Redo mood questionnaire") {
-                        var p = prefs.preferences
-                        p.completedQuestionnaire = false
-                        prefs.preferences = p
-                        app.plan = nil
+                        prefs.beginEditingQuestionnaire()
                     }
                     Button("Reset all onboarding", role: .destructive) {
                         prefs.resetOnboarding()
