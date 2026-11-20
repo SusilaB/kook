@@ -14,9 +14,11 @@ struct DisclaimerView: View {
                         .foregroundStyle(.secondary)
 
                     Group {
-                        Text("Medical disclaimer")
+                        Text(DisclaimerPresentation.medicalHeading)
                             .font(.headline)
-                        Text("Kook is not medical advice. Nutrition thresholds are draft values pending registered dietitian review. If you have allergies, diabetes, or another medical condition, consult a clinician before changing your diet.")
+                            .accessibilityIdentifier("disclaimer.medical.heading")
+                        Text(DisclaimerPresentation.medicalBody)
+                            .accessibilityIdentifier(DisclaimerPresentation.medicalBodyAccessibilityID)
                         Text("Region & data")
                             .font(.headline)
                         Text("This prototype is US-only and prices are shown in USD. Preferences stay on this device — no accounts or cloud sync. Prices are stub fixtures (not live scrapes) and are timestamped; missing prices show as unavailable.")
@@ -29,15 +31,17 @@ struct DisclaimerView: View {
                 .padding()
             }
             .safeAreaInset(edge: .bottom) {
-                Button("I understand — continue") {
+                Button(DisclaimerPresentation.continueTitle) {
                     prefs.acceptDisclaimer()
                 }
                 .buttonStyle(.borderedProminent)
                 .frame(maxWidth: .infinity)
                 .padding()
                 .background(.ultraThinMaterial)
+                .accessibilityIdentifier(DisclaimerPresentation.continueAccessibilityID)
             }
             .navigationTitle("Welcome")
+            .accessibilityIdentifier(DisclaimerPresentation.screenAccessibilityID)
         }
     }
 }

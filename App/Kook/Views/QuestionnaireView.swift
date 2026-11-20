@@ -68,6 +68,7 @@ struct QuestionnaireView: View {
                         prefs.skipQuestionnaireAndUseDefaults()
                         app.regenerate(using: prefs.preferences)
                     }
+                    .accessibilityIdentifier("questionnaire.skip")
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Build plan") {
@@ -75,6 +76,7 @@ struct QuestionnaireView: View {
                         prefs.saveQuestionnaire(draft)
                         app.regenerate(using: prefs.preferences)
                     }
+                    .accessibilityIdentifier("questionnaire.build")
                 }
             }
             .onAppear {
@@ -82,6 +84,7 @@ struct QuestionnaireView: View {
                 draft.acceptedDisclaimer = true
                 if draft.cuisine == nil { draft.cuisine = .american }
             }
+            .accessibilityIdentifier("questionnaire.screen")
         }
     }
 }
