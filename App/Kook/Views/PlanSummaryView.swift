@@ -8,39 +8,62 @@ struct PlanSummaryView: View {
         NavigationStack {
             List {
                 if let plan = app.plan {
-                    Section {
-                        Text("Scaled for \(prefs.preferences.householdSize) · US / USD prototype")
-                            .font(.footnote)
-                            .foregroundStyle(.secondary)
-                    }
-                    ForEach(plan.meals) { meal in
-                        NavigationLink(value: meal) {
-                            VStack(alignment: .leading, spacing: 4) {
-                                Text(meal.mealTime.displayName.uppercased())
-                                    .font(.caption)
-                                    .foregroundStyle(.secondary)
-                                Text(meal.recipe.name)
-                                    .font(.headline)
-                                Text(meal.recipe.cuisine.displayName)
-                                    .font(.subheadline)
-                                badgeRow(for: meal.recipe)
+                    if plan.meals.isEmpty {
+                        ContentUnavailableView(
+                            PlanSummaryPresentation.noMatchesTitle,
+                            systemImage: "fork.knife.circle",
+                            description: Text(PlanSummaryPresentation.noMatchesDescription)
+                        )
+                        .accessibilityIdentifier(PlanSummaryPresentation.noMatchesAccessibilityID)
+                    } else {
+                        Section {
+                            Text(PlanSummaryPresentation.householdScaleLine(people: prefs.preferences.householdSize))
+                                .font(.footnote)
+                                .foregroundStyle(.secondary)
+                        }
+                        ForEach(plan.meals) { meal in
+                            NavigationLink(value: meal) {
+                                VStack(alignment: .leading, spacing: 4) {
+                                    Text(meal.mealTime.displayName.uppercased())
+                                        .font(.caption)
+                                        .foregroundStyle(.secondary)
+                                    Text(meal.recipe.name)
+                                        .font(.headline)
+                                    Text(meal.recipe.cuisine.displayName)
+                                        .font(.subheadline)
+                                    badgeRow(for: meal.recipe)
+                                }
+                                .padding(.vertical, 4)
                             }
-                            .padding(.vertical, 4)
                         }
                     }
                 } else {
-                    ContentUnavailableView("No plan yet", systemImage: "fork.knife", description: Text("Generate a plan from Settings or re-run the questionnaire."))
+                    ContentUnavailableView(
+                        PlanSummaryPresentation.noPlanTitle,
+                        systemImage: "fork.knife",
+                        description: Text(PlanSummaryPresentation.noPlanDescription)
+                    )
                 }
             }
-            .navigationTitle("Today’s plan")
+            .navigationTitle(PlanSummaryPresentation.navigationTitle)
             .navigationDestination(for: PlannedMeal.self) { meal in
                 RecipeDetailView(meal: meal)
             }
             .toolbar {
-                Button("Refresh") {
-                    app.regenerate(using: prefs.preferences)
+                ToolbarItem(placement: .cancellationAction) {
+                    Button(PlanSummaryPresentation.editPreferencesTitle) {
+                        prefs.beginEditingQuestionnaire()
+                    }
+                    .accessibilityIdentifier(PlanSummaryPresentation.editPreferencesAccessibilityID)
+                }
+                ToolbarItem(placement: .confirmationAction) {
+                    Button(PlanSummaryPresentation.refreshTitle) {
+                        app.regenerate(using: prefs.preferences)
+                    }
+                    .accessibilityIdentifier(PlanSummaryPresentation.refreshAccessibilityID)
                 }
             }
+            .accessibilityIdentifier(PlanSummaryPresentation.screenAccessibilityID)
         }
     }
 

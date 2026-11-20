@@ -19,6 +19,14 @@ final class MealPlanService {
 
     func buildPlan(preferences: UserPreferences) -> MealPlan {
         let safe = validator.filter(catalog.recipes, against: preferences)
+        // Cuisine is a hard constraint when the user picked one — never soft-rank a mismatch in.
+        let pool: [Recipe]
+        if let cuisine = preferences.cuisine {
+            pool = safe.filter { $0.cuisine == cuisine }
+        } else {
+            pool = safe
+        }
+
         let targets: [MealTime]
         if preferences.mealTime == .fullDay {
             targets = [.breakfast, .lunch, .dinner]
@@ -31,22 +39,22 @@ final class MealPlanService {
 
         for mealTime in targets {
             let candidates = ranked(
-                safe.filter { $0.mealTimes.contains(mealTime) },
+                pool.filter { $0.mealTimes.contains(mealTime) },
                 preferences: preferences
             )
             .filter { !used.contains($0.id) }
 
-            let pick = candidates.first ?? ranked(safe, preferences: preferences).first { !used.contains($0.id) }
-            if let recipe = pick {
-                used.insert(recipe.id)
-                let scale = Double(preferences.householdSize) / Double(max(recipe.servings, 1))
-                meals.append(PlannedMeal(
-                    id: "\(mealTime.rawValue)-\(recipe.id)",
-                    mealTime: mealTime,
-                    recipe: recipe,
-                    scaleFactor: scale
-                ))
-            }
+            // No silent fallback to a different meal slot or cuisine.
+            guard let recipe = candidates.first else { continue }
+
+            used.insert(recipe.id)
+            let scale = Double(preferences.householdSize) / Double(max(recipe.servings, 1))
+            meals.append(PlannedMeal(
+                id: "\(mealTime.rawValue)-\(recipe.id)",
+                mealTime: mealTime,
+                recipe: recipe,
+                scaleFactor: scale
+            ))
         }
 
         return MealPlan(id: UUID(), meals: meals, generatedAt: Date(), preferences: preferences)

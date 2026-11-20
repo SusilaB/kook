@@ -95,6 +95,26 @@ final class RecipeValidatorTests: XCTestCase {
         for meal in plan.meals {
             let result = validator.validate(meal.recipe, against: prefs)
             XCTAssertTrue(result.isValid, "Plan surfaced invalid \(meal.recipe.id): \(result.issues)")
+            // Breakfast slot must stay empty when milk allergy excludes the oat bowl —
+            // never fill with a lunch/dinner recipe.
+            if meal.mealTime == .breakfast {
+                XCTFail("Breakfast should be omitted when no safe breakfast seed matches")
+            }
+            XCTAssertTrue(meal.recipe.mealTimes.contains(meal.mealTime))
+        }
+        XCTAssertFalse(plan.meals.contains { $0.recipe.id == "american-oat-berry-bowl" })
+    }
+
+    func testHardCuisineFilterNeverReturnsOtherCuisine() {
+        var prefs = UserPreferences.default
+        prefs.cuisine = .indian
+        prefs.diet = .vegetarian
+        prefs.mealTime = .lunch
+        prefs.householdSize = 4
+        let plan = MealPlanService().buildPlan(preferences: prefs)
+        for meal in plan.meals {
+            XCTAssertEqual(meal.recipe.cuisine, .indian)
+            XCTAssertTrue(meal.recipe.mealTimes.contains(.lunch))
         }
     }
 }

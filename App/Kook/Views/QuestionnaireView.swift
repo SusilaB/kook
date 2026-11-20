@@ -64,14 +64,21 @@ struct QuestionnaireView: View {
             .navigationTitle("Mood check-in")
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Skip") {
-                        prefs.skipQuestionnaireAndUseDefaults()
-                        app.regenerate(using: prefs.preferences)
+                    if prefs.isEditingQuestionnaire {
+                        Button("Cancel") {
+                            prefs.cancelQuestionnaireEdit()
+                        }
+                        .accessibilityIdentifier("questionnaire.cancel")
+                    } else {
+                        Button("Skip") {
+                            prefs.skipQuestionnaireAndUseDefaults()
+                            app.regenerate(using: prefs.preferences)
+                        }
+                        .accessibilityIdentifier("questionnaire.skip")
                     }
-                    .accessibilityIdentifier("questionnaire.skip")
                 }
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Build plan") {
+                    Button(prefs.isEditingQuestionnaire ? "Update plan" : "Build plan") {
                         draft.acceptedDisclaimer = true
                         prefs.saveQuestionnaire(draft)
                         app.regenerate(using: prefs.preferences)

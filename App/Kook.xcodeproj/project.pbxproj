@@ -33,6 +33,7 @@
 		A3C59E7D409F449896CA3BFF /* RecipeValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C852C0075C428EB95F7D1A /* RecipeValidatorTests.swift */; };
 		B1A2C3D4E5F60718293A4B5C /* ShoppingListPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A2B3C4D5E60718293A4B5C /* ShoppingListPresentation.swift */; };
 		F1A2B3C4E5F60718293A4B5C /* DisclaimerPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B3C4D5E6F708192A3B4C5D /* DisclaimerPresentation.swift */; };
+		E2B3C4D5E6F708192A3B4C5D /* PlanSummaryPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3D4E5F60718293A4B5C6D /* PlanSummaryPresentation.swift */; };
 		D1A2B3C4E5F60718293A4B5C /* ScreenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A2B3C4D5E60718293A4B5C /* ScreenTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		52C852C0075C428EB95F7D1A /* RecipeValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeValidatorTests.swift; sourceTree = "<group>"; };
 		C1A2B3C4D5E60718293A4B5C /* ShoppingListPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListPresentation.swift; sourceTree = "<group>"; };
 		A2B3C4D5E6F708192A3B4C5D /* DisclaimerPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclaimerPresentation.swift; sourceTree = "<group>"; };
+		B2C3D4E5F60718293A4B5C6D /* PlanSummaryPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanSummaryPresentation.swift; sourceTree = "<group>"; };
 		E1A2B3C4D5E60718293A4B5C /* ScreenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTests.swift; sourceTree = "<group>"; };
 		7AB1871973FA46669D54328E /* health_verdict_rules.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = health_verdict_rules.json; sourceTree = "<group>"; };
 		ADA75E240148479D922C7F70 /* nutrition_thresholds.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = nutrition_thresholds.json; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				A280AA389BFC4040B3E48DC9 /* ShoppingListView.swift */,
 				C1A2B3C4D5E60718293A4B5C /* ShoppingListPresentation.swift */,
 				A2B3C4D5E6F708192A3B4C5D /* DisclaimerPresentation.swift */,
+				B2C3D4E5F60718293A4B5C6D /* PlanSummaryPresentation.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				9719ED87504348148403CEA8 /* ShoppingListView.swift in Sources */,
 				B1A2C3D4E5F60718293A4B5C /* ShoppingListPresentation.swift in Sources */,
 				F1A2B3C4E5F60718293A4B5C /* DisclaimerPresentation.swift in Sources */,
+				E2B3C4D5E6F708192A3B4C5D /* PlanSummaryPresentation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

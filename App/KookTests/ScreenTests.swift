@@ -111,6 +111,198 @@ final class QuestionnaireMealPlanTests: XCTestCase {
         app.regenerate(using: prefs.preferences)
         XCTAssertEqual(app.plan?.meals.count, 3)
     }
+
+    func testIndianVegetarianLunchReturnsChanaNotBreakfast() {
+        var prefs = UserPreferences.default
+        prefs.acceptedDisclaimer = true
+        prefs.completedQuestionnaire = true
+        prefs.cuisine = .indian
+        prefs.diet = .vegetarian
+        prefs.mealTime = .lunch
+        prefs.householdSize = 4
+        let plan = MealPlanService().buildPlan(preferences: prefs)
+        XCTAssertEqual(plan.meals.count, 1)
+        guard let meal = plan.meals.first else {
+            return XCTFail("Expected one Indian vegetarian lunch meal")
+        }
+        XCTAssertEqual(meal.mealTime, .lunch)
+        XCTAssertEqual(meal.recipe.cuisine, .indian)
+        XCTAssertTrue(meal.recipe.vegetarian)
+        XCTAssertEqual(meal.recipe.id, "indian-chana-masala")
+        XCTAssertFalse(meal.recipe.name.localizedCaseInsensitiveContains("berry"))
+        XCTAssertTrue(meal.recipe.mealTimes.contains(.lunch))
+    }
+
+    func testCuisineAndMealTimeMismatchYieldsEmptyPlan() {
+        var prefs = UserPreferences.default
+        prefs.acceptedDisclaimer = true
+        prefs.completedQuestionnaire = true
+        prefs.cuisine = .indian
+        prefs.diet = .vegetarian
+        prefs.mealTime = .breakfast
+        let plan = MealPlanService().buildPlan(preferences: prefs)
+        XCTAssertTrue(plan.meals.isEmpty, "No Indian breakfast seed — must not substitute American oats")
+    }
+
+    func testMilkAllergyExcludesBerryBowlEvenWhenVegetarian() {
+        var prefs = UserPreferences.default
+        prefs.acceptedDisclaimer = true
+        prefs.completedQuestionnaire = true
+        prefs.diet = .vegetarian
+        prefs.allergens = [.milk]
+        prefs.mealTime = .breakfast
+        prefs.cuisine = .american
+        let plan = MealPlanService().buildPlan(preferences: prefs)
+        XCTAssertFalse(plan.meals.contains { $0.recipe.id == "american-oat-berry-bowl" })
+        XCTAssertTrue(plan.meals.isEmpty, "Only American breakfast seed has milk — empty is honest")
+    }
+}
+
+// MARK: - Plan summary nav / empty-state presentation
+
+@MainActor
+final class PlanSummaryPresentationTests: XCTestCase {
+    func testEditPreferencesAndNoMatchesCopy() {
+        XCTAssertEqual(PlanSummaryPresentation.editPreferencesTitle, "Edit preferences")
+        XCTAssertFalse(PlanSummaryPresentation.noMatchesTitle.isEmpty)
+        XCTAssertTrue(
+            PlanSummaryPresentation.noMatchesDescription.localizedCaseInsensitiveContains("match")
+        )
+        XCTAssertEqual(PlanSummaryPresentation.editPreferencesAccessibilityID, "plan.editPreferences")
+        XCTAssertEqual(PlanSummaryPresentation.noMatchesAccessibilityID, "plan.noMatches")
+    }
+
+    func testBeginEditingQuestionnaireReopensMoodCheckIn() {
+        let suite = "kook.tests.plan.edit.\(UUID().uuidString)"
+        let defaults = UserDefaults(suiteName: suite)!
+        defaults.removePersistentDomain(forName: suite)
+        let prefs = PreferencesStore(defaults: defaults)
+        prefs.acceptDisclaimer()
+        var draft = UserPreferences.default
+        draft.acceptedDisclaimer = true
+        draft.cuisine = .indian
+        draft.diet = .vegetarian
+        draft.mealTime = .lunch
+        draft.householdSize = 4
+        prefs.saveQuestionnaire(draft)
+
+        XCTAssertTrue(prefs.preferences.completedQuestionnaire)
+        XCTAssertFalse(prefs.isEditingQuestionnaire)
+
+        prefs.beginEditingQuestionnaire()
+        XCTAssertTrue(prefs.isEditingQuestionnaire)
+        XCTAssertFalse(prefs.preferences.completedQuestionnaire)
+        XCTAssertEqual(prefs.preferences.cuisine, .indian)
+        XCTAssertEqual(prefs.preferences.diet, .vegetarian)
+        XCTAssertEqual(prefs.preferences.mealTime, .lunch)
+
+        prefs.cancelQuestionnaireEdit()
+        XCTAssertFalse(prefs.isEditingQuestionnaire)
+        XCTAssertTrue(prefs.preferences.completedQuestionnaire)
+        XCTAssertEqual(prefs.preferences.cuisine, .indian)
+    }
+
+    func testEditPreferencesCancelKeepsPlanAndAnswers() {
+        let suite = "kook.tests.plan.edit.cancel.\(UUID().uuidString)"
+        let defaults = UserDefaults(suiteName: suite)!
+        defaults.removePersistentDomain(forName: suite)
+        let prefs = PreferencesStore(defaults: defaults)
+        let app = AppModel()
+
+        prefs.acceptDisclaimer()
+        var draft = UserPreferences.default
+        draft.acceptedDisclaimer = true
+        draft.cuisine = .indian
+        draft.diet = .vegetarian
+        draft.mealTime = .lunch
+        draft.householdSize = 4
+        prefs.saveQuestionnaire(draft)
+        app.regenerate(using: prefs.preferences)
+
+        XCTAssertEqual(app.plan?.meals.first?.recipe.id, "indian-chana-masala")
+        let planID = app.plan?.id
+
+        prefs.beginEditingQuestionnaire()
+        XCTAssertFalse(prefs.preferences.completedQuestionnaire)
+        // Plan object remains while editing so Cancel can return to it.
+        XCTAssertEqual(app.plan?.id, planID)
+
+        prefs.cancelQuestionnaireEdit()
+        XCTAssertTrue(prefs.preferences.completedQuestionnaire)
+        XCTAssertEqual(prefs.preferences.cuisine, .indian)
+        XCTAssertEqual(prefs.preferences.mealTime, .lunch)
+        XCTAssertEqual(app.plan?.meals.first?.recipe.id, "indian-chana-masala")
+        XCTAssertFalse(app.plan?.meals.contains { $0.recipe.name.localizedCaseInsensitiveContains("berry") } ?? true)
+    }
+
+    func testEditPreferencesUpdatePlanRegeneratesFromNewFilters() {
+        let suite = "kook.tests.plan.edit.update.\(UUID().uuidString)"
+        let defaults = UserDefaults(suiteName: suite)!
+        defaults.removePersistentDomain(forName: suite)
+        let prefs = PreferencesStore(defaults: defaults)
+        let app = AppModel()
+
+        prefs.acceptDisclaimer()
+        var first = UserPreferences.default
+        first.acceptedDisclaimer = true
+        first.cuisine = .american
+        first.diet = .vegetarian
+        first.mealTime = .breakfast
+        first.householdSize = 2
+        prefs.saveQuestionnaire(first)
+        app.regenerate(using: prefs.preferences)
+        XCTAssertEqual(app.plan?.meals.first?.recipe.id, "american-oat-berry-bowl")
+
+        prefs.beginEditingQuestionnaire()
+        var edited = prefs.preferences
+        edited.cuisine = .indian
+        edited.diet = .vegetarian
+        edited.mealTime = .lunch
+        edited.householdSize = 4
+        prefs.saveQuestionnaire(edited)
+        app.regenerate(using: prefs.preferences)
+
+        XCTAssertFalse(prefs.isEditingQuestionnaire)
+        XCTAssertTrue(prefs.preferences.completedQuestionnaire)
+        XCTAssertEqual(app.plan?.meals.count, 1)
+        XCTAssertEqual(app.plan?.meals.first?.mealTime, .lunch)
+        XCTAssertEqual(app.plan?.meals.first?.recipe.id, "indian-chana-masala")
+        XCTAssertEqual(app.plan?.meals.first?.recipe.cuisine, .indian)
+        XCTAssertFalse(app.plan?.meals.contains { $0.recipe.id == "american-oat-berry-bowl" } ?? true)
+    }
+
+    func testHostsPlanSummaryWithEditPreferencesControl() {
+        let suite = "kook.tests.plan.host.\(UUID().uuidString)"
+        let defaults = UserDefaults(suiteName: suite)!
+        defaults.removePersistentDomain(forName: suite)
+        let prefs = PreferencesStore(defaults: defaults)
+        let app = AppModel()
+        prefs.acceptDisclaimer()
+        var draft = UserPreferences.default
+        draft.acceptedDisclaimer = true
+        draft.cuisine = .indian
+        draft.diet = .vegetarian
+        draft.mealTime = .lunch
+        draft.householdSize = 4
+        prefs.saveQuestionnaire(draft)
+        app.regenerate(using: prefs.preferences)
+
+        let host = UIHostingController(
+            rootView: PlanSummaryView()
+                .environmentObject(prefs)
+                .environmentObject(app)
+        )
+        let window = UIWindow(frame: CGRect(x: 0, y: 0, width: 390, height: 844))
+        window.rootViewController = host
+        window.makeKeyAndVisible()
+        host.loadViewIfNeeded()
+        host.view.layoutIfNeeded()
+
+        XCTAssertNotNil(host.view)
+        XCTAssertEqual(PlanSummaryPresentation.editPreferencesTitle, "Edit preferences")
+        XCTAssertEqual(PlanSummaryPresentation.editPreferencesAccessibilityID, "plan.editPreferences")
+        XCTAssertEqual(app.plan?.meals.first?.recipe.id, "indian-chana-masala")
+    }
 }
 
 // MARK: - Shopping list presentation
